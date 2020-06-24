@@ -27,6 +27,7 @@ class StudentsList(Resource):
             "spec": args["spec"],
             }
         return STUDENTS[student_id], 201
+api.add_resource(StudentsList, '/students/')  
 class Student(Resource):
     def get(self, student_id):
         if student_id not in STUDENTS:
@@ -57,6 +58,6 @@ class Student(Resource):
         return '', 204
 
 api.add_resource(Student, '/students/<student_id>')
-api.add_resource(StudentsList, '/students/')  
+
 if __name__ == "__main__":
    app.run(debug=True)
