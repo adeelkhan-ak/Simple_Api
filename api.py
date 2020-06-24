@@ -9,6 +9,10 @@ STUDENTS = {
     '3': {'name': 'Peter', 'age': 21, 'spec': 'history'},
     '4': {'name': 'Kate', 'age': 22, 'spec': 'science'},
 }
+class StudentsList(Resource):
+  def get(self);
+  def post(self):
 
+api.add_resource(StudentsList, '/students/')  
 if __name__ == "__main__":
   app.run(debug=True)
